@@ -21,3 +21,7 @@ Missing values produce configuration errors. No fallback secrets are used.
 - This repo does not execute Shopify Admin product writes.
 - `scripts/commerce-catalog.ts` is a data-only catalog reference.
 - Do not add paid telemetry, storage, database, or manual Vercel deploy steps without explicit approval.
+
+## Studio look and feel
+
+The storefront includes CSS-only theme tokens, heritage scan overlays, gold shimmer claim buttons, and a user-triggered Web Audio controller. See `docs/studio-look-and-feel.md`.

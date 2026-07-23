@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050505] px-6 py-16 text-[#f5f2eb]">
+    <main className="theme-loyalty-lane min-h-screen bg-[#050505] px-6 py-16 text-[#f5f2eb] studio-enter">
       <section className="mx-auto flex min-h-[70vh] max-w-5xl flex-col justify-center">
         <p className="text-xs font-black uppercase tracking-[0.28em] text-[#d4af37]">Loyalty Lane storefront</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase tracking-[-0.07em] text-white md:text-8xl">

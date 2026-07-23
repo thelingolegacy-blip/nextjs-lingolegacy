@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
+import DropCard from "@/components/DropCard";
 import DropCountdown from "@/components/DropCountdown";
 import { getFulfillmentVendor } from "@/lib/fulfillment";
 import { getMerchProducts } from "@/lib/shopify";
@@ -21,7 +22,7 @@ export default async function MerchPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#050505] px-6 py-12 text-[#f5f2eb]">
+    <main className="theme-loyalty-lane min-h-screen bg-[#050505] px-6 py-12 text-[#f5f2eb] studio-enter">
       <div className="mx-auto max-w-7xl">
         <header className="mb-12 text-center">
           <p className="text-xs font-black uppercase tracking-[0.28em] text-[#d4af37]">Loyalty Lane commerce layer</p>
@@ -50,10 +51,10 @@ export default async function MerchPage() {
             const fulfillmentVendor = getFulfillmentVendor(node.vendor);
 
             return (
-              <article key={node.id} className="flex flex-col justify-between rounded-3xl border border-[#d4af37]/20 bg-[#111] p-4 shadow-2xl shadow-black/30">
+              <DropCard key={node.id} className="flex flex-col justify-between">
                 <div>
                   {image ? (
-                    <a href={`/products/${node.handle}`} className="relative mb-4 block h-64 overflow-hidden rounded-2xl bg-black">
+                    <a href={`/products/${node.handle}`} className="heritage-scan relative mb-4 block h-64 overflow-hidden rounded-2xl bg-black">
                       <Image src={image.url} alt={image.altText || node.title} fill className="object-cover transition duration-300 hover:scale-105" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
                     </a>
                   ) : (
@@ -65,7 +66,7 @@ export default async function MerchPage() {
                   <p className="mt-3 text-lg font-black text-[#d4af37]">${Number(price.amount).toFixed(2)} {price.currencyCode}</p>
                 </div>
                 <AddToCartButton variantId={firstVariant?.id} trackingId={node.handle} />
-              </article>
+              </DropCard>
             );
           })}
         </section>

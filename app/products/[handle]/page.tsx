@@ -21,9 +21,9 @@ export default async function ProductDetailsPage({
   const fulfillmentVendor = getFulfillmentVendor(product.vendor);
 
   return (
-    <main className="min-h-screen bg-black px-6 py-12 text-[#f5f2eb]">
+    <main className="theme-loyalty-lane min-h-screen bg-black px-6 py-12 text-[#f5f2eb] studio-enter">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2">
-        <div className="relative min-h-96 overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#111]">
+        <div className="heritage-scan relative min-h-96 overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#111]">
           {image ? (
             <Image src={image.url} alt={image.altText || product.title} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" priority />
           ) : (
@@ -31,7 +31,7 @@ export default async function ProductDetailsPage({
           )}
         </div>
 
-        <section className="flex flex-col justify-center">
+        <section className="glass-lounge flex flex-col justify-center rounded-[2rem] p-6 md:p-8">
           <a href="/merch" className="mb-6 text-sm font-black uppercase tracking-[0.2em] text-[#d4af37]">Back to merch</a>
           <span className="text-sm font-black uppercase tracking-[0.24em] text-[#d4af37]">{product.vendor}</span>
           <h1 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">{product.title}</h1>
