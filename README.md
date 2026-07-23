@@ -29,3 +29,7 @@ The storefront includes CSS-only theme tokens, heritage scan overlays, gold shim
 ## Security and safety guardrails
 
 This branch adds Vercel/Next response headers, advisory AI crawler rules in `public/robots.txt`, same-origin POST checks for cart APIs, quantity caps, legal/safety placeholder routes, and UI-layer tokens. See `docs/studio-safety-guardrails.md`.
+
+## Launch operations
+
+Vercel-native launch checks, `/healthz`, rollback notes, and smoke-test guidance are documented in `docs/launch-operations-guardrails.md`. Run `npm run smoke` for the no-dependency smoke gate.
