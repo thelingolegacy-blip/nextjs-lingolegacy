@@ -42,7 +42,7 @@ export default function AudioController() {
     <button
       type="button"
       onClick={toggleAmbientAudio}
-      className="fixed bottom-6 right-6 z-50 rounded-full border border-[#d4af37]/40 bg-black/80 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#d4af37] backdrop-blur-md transition hover:border-[#d4af37]"
+      className="fixed bottom-6 right-6 z-[var(--layer-fab)] rounded-full border border-[#d4af37]/40 bg-black/80 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#d4af37] backdrop-blur-md transition hover:border-[#d4af37]"
       aria-pressed={isPlaying}
     >
       {isPlaying ? "Sound on" : "Sound off"}

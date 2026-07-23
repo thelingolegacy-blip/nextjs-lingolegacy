@@ -12,6 +12,28 @@
   --brand-glass: rgba(255, 255, 255, 0.08);
 }
 
+
+:root {
+  --layer-content: 0;
+  --layer-nav: 100;
+  --layer-backdrop: 400;
+  --layer-modal: 500;
+  --layer-toast: 600;
+  --layer-fab: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -25,3 +25,7 @@ Missing values produce configuration errors. No fallback secrets are used.
 ## Studio look and feel
 
 The storefront includes CSS-only theme tokens, heritage scan overlays, gold shimmer claim buttons, and a user-triggered Web Audio controller. See `docs/studio-look-and-feel.md`.
+
+## Security and safety guardrails
+
+This branch adds Vercel/Next response headers, advisory AI crawler rules in `public/robots.txt`, same-origin POST checks for cart APIs, quantity caps, legal/safety placeholder routes, and UI-layer tokens. See `docs/studio-safety-guardrails.md`.
