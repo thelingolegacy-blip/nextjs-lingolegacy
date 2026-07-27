@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
+import { assertSameOriginPost } from "@/lib/request-guards";
 import { createCart } from "@/lib/shopify";
 
 export async function POST(req: Request) {
   try {
+    assertSameOriginPost(req);
     const body = (await req.json()) as { variantId?: unknown; quantity?: unknown };
     const variantId = typeof body.variantId === "string" ? body.variantId : "";
-    const quantity = typeof body.quantity === "number" && body.quantity > 0 ? body.quantity : 1;
+    const quantity = typeof body.quantity === "number" && body.quantity > 0 ? Math.min(Math.floor(body.quantity), 10) : 1;
 
     if (!variantId.startsWith("gid://shopify/ProductVariant/")) {
       return NextResponse.json({ error: "A valid Shopify variantId is required." }, { status: 400 });

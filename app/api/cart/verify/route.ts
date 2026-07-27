@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { assertSameOriginPost } from "@/lib/request-guards";
 import { signCartToken, verifyCartToken } from "@/lib/cart-token";
 
 function readCookie(header: string | null, name: string) {
@@ -10,6 +11,7 @@ function readCookie(header: string | null, name: string) {
 
 export async function POST(req: Request) {
   try {
+    assertSameOriginPost(req);
     const body = (await req.json()) as { cartToken?: unknown; newItem?: unknown };
     const suppliedToken = typeof body.cartToken === "string" ? body.cartToken : undefined;
     const cookieToken = readCookie(req.headers.get("cookie"), "cart");
