@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SafetyPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-[#f5f2eb]">
@@ -11,7 +13,7 @@ export default function SafetyPage() {
           <li>AI crawler blocks in robots.txt are advisory; use Vercel Firewall only after traffic is measured as a cost driver.</li>
           <li>Hidden UI is not a security boundary; restricted data must never be rendered into the DOM.</li>
         </ul>
-        <a className="mt-8 inline-block text-[#d4af37]" href="/">Back home</a>
+        <Link className="mt-8 inline-block text-[#d4af37]" href="/">Back home</Link>
       </section>
     </main>
   );

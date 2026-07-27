@@ -13,12 +13,16 @@ export default function AudioController() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   async function toggleAmbientAudio() {
-    if (graph.current && isPlaying) {
-      graph.current.gain.gain.setTargetAtTime(0, graph.current.context.currentTime, 0.08);
+    const currentGraph = graph.current;
+
+    if (currentGraph && isPlaying) {
+      currentGraph.gain.gain.setTargetAtTime(0, currentGraph.context.currentTime, 0.08);
       window.setTimeout(() => {
-        graph.current?.oscillator.stop();
-        graph.current?.context.close();
-        graph.current = null;
+        currentGraph.oscillator.stop();
+        currentGraph.context.close();
+        if (graph.current === currentGraph) {
+          graph.current = null;
+        }
       }, 180);
       setIsPlaying(false);
       return;

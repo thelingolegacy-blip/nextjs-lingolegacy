@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-[#f5f2eb]">
@@ -6,7 +8,7 @@ export default function PrivacyPage() {
         <p className="mt-4 leading-8 text-[#f5f2eb]/75">
           This storefront scaffold collects no personal data until Shopify checkout or approved forms are configured. Shopify checkout data is handled by Shopify. Do not add analytics, form capture, or session replay without consent and approval.
         </p>
-        <a className="mt-8 inline-block text-[#d4af37]" href="/">Back home</a>
+        <Link className="mt-8 inline-block text-[#d4af37]" href="/">Back home</Link>
       </section>
     </main>
   );

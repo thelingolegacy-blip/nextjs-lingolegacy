@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-[#f5f2eb]">
@@ -6,7 +8,7 @@ export default function TermsPage() {
         <p className="mt-4 leading-8 text-[#f5f2eb]/75">
           This is a launch placeholder. Products, pre-orders, refunds, fulfillment timing, and limited-drop rules must be finalized before collecting payments outside Shopify checkout.
         </p>
-        <a className="mt-8 inline-block text-[#d4af37]" href="/">Back home</a>
+        <Link className="mt-8 inline-block text-[#d4af37]" href="/">Back home</Link>
       </section>
     </main>
   );
