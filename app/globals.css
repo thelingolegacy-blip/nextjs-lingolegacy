@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #050508;
+  --foreground: #fff9e8;
+  --studio-panel: rgba(15, 17, 27, 0.78);
+  --studio-line: rgba(247, 200, 75, 0.32);
+  --studio-gold: #f7c84b;
+  --studio-cyan: #56efff;
+  --studio-violet: #8a55ff;
 }
 
 @theme inline {
@@ -12,15 +18,33 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(138, 85, 255, 0.28), transparent 30rem),
+    radial-gradient(circle at 86% 6%, rgba(86, 239, 255, 0.16), transparent 26rem),
+    radial-gradient(circle at 50% 86%, rgba(247, 200, 75, 0.16), transparent 32rem),
+    linear-gradient(180deg, #10111a 0%, var(--background) 52%, #020204 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  text-rendering: geometricPrecision;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(#000, transparent 76%);
+}
+a { text-decoration-thickness: .08em; text-underline-offset: .18em; }
+p, li { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
 }
