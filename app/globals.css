@@ -48,3 +48,29 @@ h1, h2, h3 { text-wrap: balance; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
 }
+
+
+.studio-production-console {
+  position: relative;
+  isolation: isolate;
+}
+.studio-production-console::before {
+  content: "";
+  position: absolute;
+  inset: -12% 4% auto;
+  height: 220px;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(247, 200, 75, 0.16), rgba(86, 239, 255, 0.13), transparent);
+  filter: blur(28px);
+}
+.studio-asset-particle {
+  position: fixed;
+  z-index: 9000;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: currentColor;
+  box-shadow: 0 0 16px currentColor;
+  transition: transform 900ms ease, opacity 900ms ease;
+}
