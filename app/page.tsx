@@ -1,3 +1,5 @@
+import { StudioProductionConsole } from "@/components/StudioProductionConsole";
+
 const proofPoints = [
   ["Drop system", "Merch, Tapstitch POD, and bulk inventory paths are separated so launch copy can stay honest."],
   ["Checkout-ready", "Shopify owns checkout while the landing page focuses on conversion, story, and release timing."],
@@ -67,6 +69,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StudioProductionConsole />
 
       <section className="mx-auto grid max-w-6xl gap-4 px-5 pb-20 sm:grid-cols-2 md:px-6 lg:grid-cols-4" id="launch-system">
         {launchSteps.map((step, index) => (
