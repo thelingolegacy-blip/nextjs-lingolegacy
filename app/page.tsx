@@ -12,6 +12,8 @@ const studioMetrics = [
   ["Design stack", "Tailwind 4"],
 ];
 
+import AskLingo from "./components/AskLingo";
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden text-[#fff9e8]">
@@ -76,6 +78,7 @@ export default function Home() {
           </article>
         ))}
       </section>
+      <AskLingo />
     </main>
   );
 }
